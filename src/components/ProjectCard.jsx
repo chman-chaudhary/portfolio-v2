@@ -1,6 +1,7 @@
+/* eslint-disable react/prop-types */
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
-import React, { useRef, useState } from "react";
+import { useRef, useState } from "react";
 import { GoArrowUpRight } from "react-icons/go";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useCursorFollower } from "../context/CursorFollower";

@@ -23,7 +23,7 @@ const Contact = () => {
 
   return (
     <div
-      className="h-screen overflow-hidden text-[rgb(255,0,0)] flex flex-col justify-center items-center font-extrabold text-[10rem] uppercase relative mt-40"
+      className="relative h-screen overflow-hidden text-[rgb(255,0,0)] flex flex-col justify-center items-center font-extrabold text-[10rem] uppercase mt-40"
       ref={ContactParent}
       name="contact"
     >
@@ -33,7 +33,7 @@ const Contact = () => {
       <div className="mask bg-black h-32 w-screen absolute top-48 left-0 z-[1]"></div>
       <div className="contactText -translate-y-16 z-[2]">Attention</div>
       <div className="mask bg-black h-32 w-screen absolute top-80 left-0 z-[2]"></div>
-      <div className="contactText -translate-y-44 z-[3]">Let's Talk</div>
+      <div className="contactText -translate-y-44 z-[3]">Let&apos;s Talk</div>
       <div className="mask bg-black h-32 w-screen absolute top-[28rem] left-0 z-[3]"></div>
       <ArrowCircle className={"bottom-10 left-[50%] -translate-x-[50%]"} />
     </div>

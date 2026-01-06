@@ -1,7 +1,7 @@
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/all";
-import React, { useRef } from "react";
+import { useRef } from "react";
 
 const About = () => {
   const textRef = useRef(null);
@@ -31,16 +31,21 @@ const About = () => {
   }, []);
 
   return (
-    <div
-      name="about"
-      className="h-screen w-full flex justify-center items-center px-40 aboutContainer"
-    >
-      <p className="text-5xl leading-[3.4rem] text-zinc-800" ref={textRef}>
-        I'm a BCA student specializing in website creation. I strive to
-        understand brands and deliver customized, unique digital experiences.
-        going beyond simple communication of information, I aim to highlight
-        brands and provide users with moving experiences.
-      </p>
+    <div>
+      <div
+        name="about"
+        className="h-screen w-full flex justify-center items-center px-40 aboutContainer"
+      >
+        <p
+          className="text-5xl leading-[3.4rem] text-zinc-800 text-justify"
+          ref={textRef}
+        >
+          I&apos;m a BCA student specializing in website creation. I strive to
+          understand brands and deliver customized, unique digital experiences.
+          going beyond simple communication of information, I aim to highlight
+          brands and provide users with moving experiences.
+        </p>
+      </div>
     </div>
   );
 };

@@ -1,9 +1,11 @@
-import gsap from "gsap";
-import React, { useRef, useState } from "react";
+// import gsap from "gsap";
+import { useRef, useState } from "react";
 import { Link } from "react-scroll";
+import TypewriterTitles from "./TypewriterTiles";
+import gsap from "gsap";
 
 const NavLinkStyle =
-  "rotate-180 w-full text-end py-4 text-transparent hover:text-[rgb(235,235,235)] uppercase";
+  "w-fit text-end text-transparent hover:text-[rgb(245,245,245)] uppercase";
 
 const NavLinks = ["about", "projects", "skills", "certificate", "contact"];
 
@@ -62,40 +64,45 @@ const Hero = () => {
   return (
     <div
       name="hero"
-      className="h-screen w-full flex justify-between items-end mb-40 bg-black"
+      className="h-screen w-full flex flex-col sm:flex-row justify-center sm:justify-between items-center sm:items-end bg-black pl-0 sm:pl-5 md:pl-10 lg:pl-20 py-20 gap-y-20 sm:gap-y-0 sm:py-0 overflow-hidden lg:pt-0"
       ref={heroContainer}
       onMouseMove={(e) => handleMouseMove(e)}
       onMouseLeave={() => setImage(null)}
     >
-      <div className="h-screen flex flex-col justify-around px-20 z-[1]">
-        <div className="text-5xl">
+      <div className="w-[100%] sm:w-fit h-fit sm:h-screen flex flex-col-reverse sm:flex-col justify-center sm:justify-around gap-y-3 lg:gap-y-5 z-[1] pl-5 lg:pl-10 sm:pl-0">
+        <div className="hidden sm:inline text-[1.5em] sm:text-[2em] md:text-[2.5em] lg:text-[3em]">
           coder,
           <br />
           developer,
           <br />
-          tech enthusiast:
+          <span>Technologist:</span>
         </div>
-        <div className="text-3xl">
-          CHAMAN
+        <div className="inline sm:hidden">
+          <TypewriterTitles />
+        </div>
+        <div className="text-[3em] sm:text-[2em] md:text-[2.5em] lg:text-[3em] font-semibold uppercase leading-tight lg:leading-normal">
+          Chaman
           <br />
-          CHAUDHARY
+          Chaudhary
         </div>
       </div>
-      <nav className="flex flex-col items-start text-8xl origin-bottom-left -rotate-90 font-semibold translate-x-[33rem] z-[1]">
-        {NavLinks.map((link, idx) => (
-          <Link
-            key={idx}
-            smooth={true}
-            to={link}
-            duration={400}
-            style={{ WebkitTextStroke: "2px rgb(235,235,235)" }}
-            className={NavLinkStyle}
-            onMouseEnter={() => handleMouseEnter(idx)}
-            onMouseLeave={() => stopAudio(idx)}
-          >
-            {link}
-          </Link>
-        ))}
+      <nav className="h-[100%] sm:h-fit flex flex-col items-end gap-y-5 rotate-90 text-[3.5rem] md:text-[5rem] lg:text-8xl leading-none font-semibold z-[1]">
+        {NavLinks.slice()
+          .reverse()
+          .map((link, idx) => (
+            <Link
+              key={idx}
+              smooth={true}
+              to={link}
+              duration={400}
+              style={{ WebkitTextStroke: "2px rgb(245,245,245)" }}
+              className={NavLinkStyle}
+              onMouseEnter={() => handleMouseEnter(idx)}
+              onMouseLeave={() => stopAudio(idx)}
+            >
+              {link}
+            </Link>
+          ))}
       </nav>
       {image && (
         <img

@@ -1,4 +1,4 @@
-import React, { useRef, useState } from "react";
+import { useRef, useState } from "react";
 import { Certificates } from "../assets/data";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
@@ -19,7 +19,6 @@ const Certificate = () => {
 
   useGSAP(() => {
     if (!currentCertificate) return;
-    console.log(currentCertificate);
     gsap.to(imageRef.current, {
       x: currentCertificate.x,
       y: currentCertificate.y,
@@ -33,30 +32,20 @@ const Certificate = () => {
   useGSAP(() => {
     gsap.registerPlugin(ScrollTrigger);
 
-    gsap.from(".heading", {
-      opacity: 0,
-      y: -50,
-      duration: 0.5,
-      scrollTrigger: {
-        trigger: ".parentContainer",
-        start: "top 30%",
-      },
-    });
-
     gsap.from(".certificates", {
       opacity: 0,
       y: 40,
-      stagger: 0.3,
+      stagger: 0.2,
       scrollTrigger: {
-        trigger: ".parentContainer",
-        start: "top 20%",
+        trigger: certificateContainer.current,
+        start: "top 15%",
       },
     });
   }, []);
 
   return (
     <div
-      className="h-screen w-full flex flex-col parentContainer mt-40 overflow-hidden"
+      className="parentContainer relative h-screen w-full flex flex-col mt-40"
       ref={certificateContainer}
       name="certificate"
     >
@@ -64,7 +53,7 @@ const Certificate = () => {
         <img
           ref={imageRef}
           src={currentCertificate.image}
-          width="180px"
+          width="250px"
           className="absolute z-[1] pointer-events-none opacity-0"
           alt={currentCertificate.name}
         />

@@ -1,14 +1,14 @@
-import { useRef, useState } from "react";
-import Hero from "./components/Hero";
-import Projects from "./components/Projects";
 import gsap from "gsap";
-import About from "./components/About";
+import { useRef, useState } from "react";
+
 import { useCursorFollower } from "./context/CursorFollower";
+import Loading from "./components/Loading";
+import Hero from "./components/Hero";
+import About from "./components/About";
+import Projects from "./components/Projects";
 import Skills from "./components/Skills";
 import Certificate from "./components/Certificates";
 import Contact from "./components/Contact";
-import Loading from "./components/Loading";
-import ArrowCircle from "./components/ArrowCircle";
 
 const App = () => {
   const [ready, setReady] = useState(false);
@@ -27,25 +27,40 @@ const App = () => {
   return (
     <div
       ref={main}
-      onMouseMove={(e) => handleMouseMove(e)}
-      className="min-h-screen w-screen"
+      onMouseMove={handleMouseMove}
+      className="
+        min-h-screen 
+        w-full 
+        overflow-x-hidden 
+        bg-black 
+        flex flex-col items-center 
+      "
     >
       <div
-        className="h-3 w-3 rounded-full bg-white fixed top-0 left-0 opacity-0 flex justify-center items-center text-black font-medium z-[50] pointer-events-none"
+        className="
+          h-3 w-3 rounded-full bg-white 
+          fixed top-0 left-0 
+          opacity-0 
+          flex justify-center items-center 
+          text-black font-medium 
+          z-[50] 
+          pointer-events-none
+        "
         ref={cursorFollower}
       ></div>
-      {ready ? (
-        <>
-          <Hero />
-          <About />
-          <Projects />
-          <Skills />
-          <Certificate />
-          <Contact />
-        </>
-      ) : (
+
+      {/* {ready ? ( */}
+      <>
+        <Hero />
+        <About />
+        <Projects />
+        <Skills />
+        <Certificate />
+        <Contact />
+      </>
+      {/* ) : (
         <Loading setReady={setReady} />
-      )}
+      )} */}
     </div>
   );
 };

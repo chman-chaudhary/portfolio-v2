@@ -1,4 +1,4 @@
-import React, { useRef, useState } from "react";
+import { useRef, useState } from "react";
 import ProjectCard from "./ProjectCard";
 
 const Projects = () => {
@@ -121,7 +121,7 @@ const Projects = () => {
   return (
     <div
       name="projects"
-      className="bg-[rgb(10,10,10)] h-[100vh] w-full overflow-visible"
+      className="h-[100vh] w-full overflow-visible"
       ref={projectsRef}
     >
       <div className="relative h-auto">
