@@ -49,18 +49,18 @@ const App = () => {
         ref={cursorFollower}
       ></div>
 
-      {/* {ready ? ( */}
-      <>
-        <Hero />
-        <About />
-        <Projects />
-        <Skills />
-        <Certificate />
-        <Contact />
-      </>
-      {/* ) : (
+      {ready ? (
+        <>
+          <Hero />
+          <About />
+          <Projects />
+          <Skills />
+          <Certificate />
+          <Contact />
+        </>
+      ) : (
         <Loading setReady={setReady} />
-      )} */}
+      )}
     </div>
   );
 };

@@ -38,13 +38,14 @@ const ProjectCards = ({
         scrollTrigger: {
           trigger: projectsRef.current,
           scroller: "body",
-          start: "top 30%",
+          start: "top 40%",
           end: "top 5%",
           scrub: 3,
+          snap: 1,
         },
       });
     },
-    { dependencies: [] }
+    { dependencies: [] },
   );
 
   const handleMouseDown = (e) => {

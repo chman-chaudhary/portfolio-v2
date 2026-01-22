@@ -29,9 +29,9 @@ const Skills = () => {
 
     gsap.fromTo(
       wrapper,
-      { x: firstItemOffset }, // 👈 start perfectly centered
+      { x: firstItemOffset },
       {
-        x: lastItemOffset, // 👈 end perfectly centered
+        x: lastItemOffset,
         ease: "none",
         scrollTrigger: {
           trigger: container,
@@ -50,7 +50,7 @@ const Skills = () => {
               const scale = gsap.utils.clamp(
                 0.85,
                 1.8, // 🔥 bigger center scale
-                1.8 - distance / 240 // smoother falloff
+                1.8 - distance / 240, // smoother falloff
               );
 
               gsap.to(item.querySelector(".icon-wrapper"), {
@@ -68,7 +68,7 @@ const Skills = () => {
             });
           },
         },
-      }
+      },
     );
   }, []);
 
@@ -89,7 +89,7 @@ const Skills = () => {
           {SkillIcons.map((icon, idx) => {
             const updatedSvg = icon.svg.replace(
               "<svg",
-              `<svg width="${size}" height="${size}"`
+              `<svg width="${size}" height="${size}"`,
             );
 
             return (
