@@ -29,20 +29,6 @@ const Certificate = () => {
     });
   }, [currentCertificate]);
 
-  useGSAP(() => {
-    gsap.registerPlugin(ScrollTrigger);
-
-    gsap.from(".certificates", {
-      opacity: 0,
-      y: 40,
-      stagger: 0.2,
-      scrollTrigger: {
-        trigger: certificateContainer.current,
-        start: "top 15%",
-      },
-    });
-  }, []);
-
   return (
     <div
       className="parentContainer relative h-screen w-full flex flex-col mt-40"
